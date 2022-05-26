@@ -2,7 +2,7 @@
 
 set -eux
 
-dir=$(dirname $0)
+dir=$(readlink -f $(dirname $0))
 tmpdir=$(mktemp -d)
 
 cd ${tmpdir}
@@ -30,6 +30,6 @@ mkdir -p sraph/log
 curl -sSL https://fastly.jsdelivr.net/gh/sraphs/log@main/schema/log.proto -o sraph/log/log.proto
 
 # copy and clean up
-rsync -av --include="*.proto" . ${dir}
+rsync -av --include='*.proto' --include='*/' --exclude='*' ${tmpdir}/* ${dir}
 cd ${dir}
 rm -rf ${tmpdir}
