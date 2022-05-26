@@ -9,6 +9,10 @@ This repository is a home for the protocol buffer types which are made available
 - (errors)[https://github.com/go-kratos/kratos]
   
 - (validate)[https://github.com/envoyproxy/protoc-gen-validate]
+  
+- (protoc-gen-openapiv2)[https://github.com/grpc-ecosystem/grpc-gateway]
+  
+- (sraph)[https://github.com/sraphs]
 
 ## Usage
 
