@@ -26,8 +26,8 @@ mkdir -p validate
 curl -sSL https://fastly.jsdelivr.net/gh/envoyproxy/protoc-gen-validate@main/validate/validate.proto -o validate/validate.proto
 
 # sraph
-mkdir -p sraph/log
-curl -sSL https://fastly.jsdelivr.net/gh/sraphs/log@main/schema/log.proto -o sraph/log/log.proto
+mkdir -p sraph/slog
+curl -sSL https://fastly.jsdelivr.net/gh/sraphs/slog@main/log.proto -o sraph/slog/log.proto
 
 # copy and clean up
 rsync -av --include='*.proto' --include='*/' --exclude='*' ${tmpdir}/* ${dir}
