@@ -3,15 +3,18 @@
 set -eux
 cd $(dirname $0)
 
-SCHEMA=.
-OUT_PATH=.
+PROTO_FILES=$(find "google/protobuf" -name "*.proto")
 
-[ -d ${OUT_PATH} ] || mkdir ${OUT_PATH}
+for file in $PROTO_FILES; do
+    sed -i 's,google.golang.org/protobuf,github.com/sraphs/third_party,g' $file
+    protoc \
+        --proto_path . \
+        --go_out=. \
+        ${PROTO_FILES}
+done
 
-PROTO_FILES=$(find ${SCHEMA} -name "*.proto")
-protoc \
-    --proto_path ./${SCHEMA} \
-    --go_out=paths=source_relative:${OUT_PATH} \
-    ${PROTO_FILES}
+mkdir -p types/known
+cp -r github.com/sraphs/third_party/types/known types
+rm -rf github.com
 
 cd -

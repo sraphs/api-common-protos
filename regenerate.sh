@@ -33,3 +33,5 @@ curl -sSL https://fastly.jsdelivr.net/gh/sraphs/slog@main/log.proto -o sraph/slo
 rsync -av --include='*.proto' --include='*/' --exclude='*' ${tmpdir}/* ${dir}
 cd ${dir}
 rm -rf ${tmpdir}
+
+./genproto.sh
