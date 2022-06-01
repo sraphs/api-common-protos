@@ -29,6 +29,10 @@ curl -sSL https://fastly.jsdelivr.net/gh/envoyproxy/protoc-gen-validate@main/val
 mkdir -p sraph/slog
 curl -sSL https://fastly.jsdelivr.net/gh/sraphs/slog@main/log.proto -o sraph/slog/log.proto
 
+# go/tags
+mkdir -p go/tags
+curl -sSL https://fastly.jsdelivr.net/gh/sraphs/protobuf-go@reat/add_go_tag/gotags/opts.proto -o go/tags/opts.proto
+
 # copy and clean up
 rsync -av --include='*.proto' --include='*/' --exclude='*' ${tmpdir}/* ${dir}
 cd ${dir}
