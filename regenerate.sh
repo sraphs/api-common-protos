@@ -37,5 +37,3 @@ curl -sSL https://fastly.jsdelivr.net/gh/sraphs/protobuf-go@reat/add_go_tag/gota
 rsync -av --include='*.proto' --include='*/' --exclude='*' ${tmpdir}/* ${dir}
 cd ${dir}
 rm -rf ${tmpdir}
-
-./genproto.sh

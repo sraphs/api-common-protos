@@ -50,7 +50,7 @@ package google.protobuf.compiler;
 option java_package = "com.google.protobuf.compiler";
 option java_outer_classname = "PluginProtos";
 
-option go_package = "github.com/sraphs/third_party/types/pluginpb";
+option go_package = "google.golang.org/protobuf/types/pluginpb";
 
 import "google/protobuf/descriptor.proto";
 
