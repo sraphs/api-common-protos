@@ -16,10 +16,10 @@ rm -rf api-common-protos
 mkdir -p errors
 curl -sSL https://fastly.jsdelivr.net/gh/go-kratos/kratos@main/errors/errors.proto -o errors/errors.proto
 
-# protoc-gen-openapiv2
-mkdir -p protoc-gen-openapiv2/options
-curl -sSL https://fastly.jsdelivr.net/gh/grpc-ecosystem/grpc-gateway@master/protoc-gen-openapiv2/options/annotations.proto -o protoc-gen-openapiv2/options/annotations.proto
-curl -sSL https://fastly.jsdelivr.net/gh/grpc-ecosystem/grpc-gateway@master/protoc-gen-openapiv2/options/openapiv2.proto -o protoc-gen-openapiv2/options/openapiv2.proto
+# openapi
+mkdir -p openapi/v3
+curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/annotations.proto -o openapi/v3/annotations.proto
+curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/OpenAPIv3.proto -o openapi/v3/openapiv3.proto
 
 # validate
 mkdir -p validate
