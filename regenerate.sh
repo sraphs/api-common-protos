@@ -17,9 +17,9 @@ mkdir -p errors
 curl -sSL https://fastly.jsdelivr.net/gh/go-kratos/kratos@main/errors/errors.proto -o errors/errors.proto
 
 # openapi
-mkdir -p openapi/v3
-curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/annotations.proto -o openapi/v3/annotations.proto
-curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/OpenAPIv3.proto -o openapi/v3/openapiv3.proto
+mkdir -p openapiv3
+curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/annotations.proto -o openapiv3/annotations.proto
+curl -sSL https://fastly.jsdelivr.net/gh/google/gnostic@main/openapiv3/OpenAPIv3.proto -o openapiv3/OpenAPIv3.proto
 
 # validate
 mkdir -p validate
