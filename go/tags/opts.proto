@@ -1,1 +1,16 @@
-Failed to fetch sraphs/protobuf-go@reat from GitHub.
+// Copyright 2022 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+package go.tags;
+option go_package = "google.golang.org/protobuf/gotags";
+
+extend google.protobuf.FieldOptions {
+  repeated Opts opts = 9000;
+}
+
+message Opts {
+  repeated string kvs = 1;
+}
